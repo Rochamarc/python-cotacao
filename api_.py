@@ -9,44 +9,33 @@ except:
     exit()
 
 cotacao = json.loads(req.text)
+cotacao = cotacao['results']['currencies']
 
 def GetDollar(type_="value"):
     
-    global cotacao
-    dollar = cotacao['results']['currencies']['USD']
-    dollar_value = dollar['buy']
-    dollar_variation = dollar['variation']
+    global cotacao 
     if type_ == 'value':
-        return "R$ %.2f" %dollar_value
-    return dollar_variation        
+        return "R$ %.2f" %cotacao['USD']['buy']
+    return cotacao['USD']['variation']        
 
 def GetBitcoin(type_="value"):
     
     global cotacao
-    bitcoin = cotacao['results']['currencies']['BTC']
-    bitcoin_value = bitcoin['buy']
-    bitcoin_variation = bitcoin['variation']
     if type_ == "value":
-        return "R$ %.2f" %bitcoin_value
-    return bitcoin_variation
+        return "R$ %.2f" %cotacao['BTC']['buy']
+    return cotacao['BTC']['variation']
 
 def GetEuro(type_="value"):
     
     global cotacao
-    euro = cotacao['results']['currencies']['EUR']
-    euro_value = euro['buy']
-    euro_variation = euro['variation']
     if type_ == "value":
-        return "R$ %.2f" %euro_value
-    return euro_variation
+        return "R$ %.2f" %cotacao['EUR']['buy']
+    return cotacao['EUR']['variation']
 
 def GetPeso(type_="value"):
     
     global cotacao
-    peso = cotacao['results']['currencies']['ARS']
-    peso_value = peso['buy']
-    peso_variation = peso['variation']
     if type_ == "value":
-        return "R$ %.2f" %peso_value
-    return peso_variation
+        return "R$ %.2f" %cotacao['ARS']['buy']
+    return cotacao['ARS']['variation']
     
