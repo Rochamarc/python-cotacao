@@ -10,7 +10,7 @@ except:
 
 cotacao = json.loads(req.text)
 
-def GetDollar(type_):
+def GetDollar(type_="value"):
     
     global cotacao
     dollar = cotacao['results']['currencies']['USD']
@@ -20,7 +20,7 @@ def GetDollar(type_):
         return "R$ %.2f" %dollar_value
     return dollar_variation        
 
-def GetBitcoin(type_):
+def GetBitcoin(type_="value"):
     
     global cotacao
     bitcoin = cotacao['results']['currencies']['BTC']
@@ -30,7 +30,7 @@ def GetBitcoin(type_):
         return "R$ %.2f" %bitcoin_value
     return bitcoin_variation
 
-def GetEuro(type_):
+def GetEuro(type_="value"):
     
     global cotacao
     euro = cotacao['results']['currencies']['EUR']
@@ -40,7 +40,7 @@ def GetEuro(type_):
         return "R$ %.2f" %euro_value
     return euro_variation
 
-def GetPeso(type_):
+def GetPeso(type_="value"):
     
     global cotacao
     peso = cotacao['results']['currencies']['ARS']
