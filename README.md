@@ -7,6 +7,6 @@
 
 ### Rodando Aplicação
 
-Para rodar a aplicação basta ir no diretorio que foi feito o donwload, e rodar o arquivo main.py
+$python3 main.py
 
 
