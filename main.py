@@ -5,19 +5,19 @@ from api_ import GetBitcoin, GetDollar, GetEuro, GetPeso
 class Get_image (BoxLayout):
 
     def GetDollarValue(self):
-        return GetDollar()
+        return "R$ %.2f" %GetDollar()
     def GetDollarVariation(self):
         return GetDollar('variation')
     def GetPesoValue(self):
-        return GetPeso() 
+        return "R$ %.2f" %GetPeso() 
     def GetPesoVariation(self):
         return GetPeso('variation')
     def GetBitcoinValue(self):
-        return GetBitcoin()
+        return "R$ %.2f" %GetBitcoin()
     def GetBitcoinVariation(self):
         return GetBitcoin('variation')
     def GetEuroValue(self):
-        return GetEuro()
+        return "R$ %.2f" %GetEuro()
     def GetEuroVariation(self):
         return GetEuro("variation")
 

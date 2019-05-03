@@ -11,31 +11,31 @@ except:
 cotacao = json.loads(req.text)
 cotacao = cotacao['results']['currencies']
 
-def GetDollar(type_="value"):
+def GetDollar(cot=cotacao,type_="value"):
     
-    global cotacao 
     if type_ == 'value':
-        return "R$ %.2f" %cotacao['USD']['buy']
-    return cotacao['USD']['variation']        
+        return cot['USD']['buy']
+    return cot['USD']['variation']        
 
-def GetBitcoin(type_="value"):
+def GetBitcoin(cot=cotacao,type_="value"):
     
-    global cotacao
     if type_ == "value":
-        return "R$ %.2f" %cotacao['BTC']['buy']
-    return cotacao['BTC']['variation']
+        return cot['BTC']['buy']
+    return cot['BTC']['variation']
 
-def GetEuro(type_="value"):
+def GetEuro(cot=cotacao,type_="value"):
     
-    global cotacao
     if type_ == "value":
-        return "R$ %.2f" %cotacao['EUR']['buy']
-    return cotacao['EUR']['variation']
+        return cot['EUR']['buy']
+    return cot['EUR']['variation']
 
-def GetPeso(type_="value"):
+def GetPeso(cot=cotacao,type_="value"):
     
-    global cotacao
     if type_ == "value":
-        return "R$ %.2f" %cotacao['ARS']['buy']
-    return cotacao['ARS']['variation']
+        return cot['ARS']['buy']
+    return cot['ARS']['variation']
     
+
+if __name__ == '__main__':
+    dolar = GetDollar()
+    print(dolar)
