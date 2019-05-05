@@ -3,7 +3,7 @@
 ### Dependencias
 
 - Python3
-- Tkinter
+- Kivy
 
 ### Rodando Aplicação
 

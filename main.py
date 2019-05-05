@@ -1,7 +1,5 @@
 from tkinter import *
 from api import *
-from multiprocessing import Process
-from time import sleep
 
 class Packing:
     def __init__(self,tk_instance):
@@ -44,12 +42,13 @@ class Packing:
         Label(self.container2, text=self.bit_value).pack()
         Label(self.container2, text=self.bit_variation).pack()
         #Reload bitcoins
-        Button(self.container3, text='Reload Coins').pack(side=LEFT)
+        self.button_reload = Button(self.container3, text='Reload Coins')
+        self.button_reload.pack(side=LEFT)
         Button(self.container3, text='Plot Graphic').pack(side=LEFT)
-        Button(self.container3, text='Exit',command=exit).pack(side=LEFT)
+        Button(self.container3, text='Exit').pack(side=LEFT)
 
     def reload_api():
-        self.dollar_value = GetDollar()
+        self.dollar_value = f'R$ {GetDollar()}'
         self.dollar_variation = GetDollar('variation')
         self.euro_value = f'R$ {GetEuro()}'
         self.euro_variation = GetEuro('variation')
@@ -59,18 +58,7 @@ class Packing:
         self.bit_variation = GetBitcoin('variation')
         print(self.dollar_value, self.euro_value)
 
-#retorn e printa o valor do dolar
-def retorna_dolar():
-    while True:
-        sleep(3)
-        dolar = GetDollar()
-        print(dolar)
-
-if __name__ == "__main__":
-    p = Process(target=retorna_dolar)
+if __name__ == '__main__':
     raiz = Tk()
     Packing(raiz)
-    p.start()
     raiz.mainloop()
-    
-    
