@@ -1,0 +1,29 @@
+/* editando as fontes */
+@font-face {
+    font-family: "MinhaFonte";
+    src: url(BlackLabel-Light.ttf) format("truetype");
+}
+h1, h3, p, li {
+    font-family: MinhaFonte;
+}
+
+/* Edicao do conteudo */
+body {
+    background: rgb(104, 100, 100);
+}
+.app h3 {
+    text-align: center;
+}
+
+.moedas {
+    text-align: center;
+    background-color: rgb(4, 44, 133);
+}
+.moedas ul {
+    list-style-type: none;
+    text-align: center;
+    display: inline-flex;
+}
+.moedas li {
+    margin: 25px;
+}
