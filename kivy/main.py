@@ -1,9 +1,13 @@
 from kivy.app import App
+from kivy.clock import Clock
 from kivy.uix.boxlayout import BoxLayout
-from api_ import GetBitcoin, GetDollar, GetEuro, GetPeso
+from api import *
 
 class Get_image (BoxLayout):
 
+    def __init__(self):
+        pass
+    
     def GetDollarValue(self):
         return "R$ %.2f" %GetDollar()
     def GetDollarVariation(self):
@@ -20,7 +24,6 @@ class Get_image (BoxLayout):
         return "R$ %.2f" %GetEuro()
     def GetEuroVariation(self):
         return GetEuro("variation")
-
 class Interface(App):
 
     def build(self):
