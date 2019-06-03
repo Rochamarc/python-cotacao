@@ -3,13 +3,16 @@
     font-family: "MinhaFonte";
     src: url(BlackLabel-Light.ttf) format("truetype");
 }
+h1, h3 {
+    color: rgb(201, 158, 39);
+}
 h1, h3, p, li {
     font-family: MinhaFonte;
 }
 
 /* Edicao do conteudo */
 body {
-    background: rgb(104, 100, 100);
+    background: url(blur-chart-data-159888.jpg);
 }
 .app h3 {
     text-align: center;
@@ -17,7 +20,7 @@ body {
 
 .moedas {
     text-align: center;
-    background-color: rgb(4, 44, 133);
+    background-color: rgb(133, 4, 32);
 }
 .moedas ul {
     list-style-type: none;
